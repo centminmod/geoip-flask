@@ -28,9 +28,9 @@ RUN cd /opt/ \
     && /usr/bin/geoipupdate -d /opt/geoip-flask/GeoLite2-City/ \
     && (crontab -l ; echo "15 0 * * * /usr/bin/geoipupdate -d /opt/geoip-flask/GeoLite2-City/ >/dev/null 2>&1") | crontab
 
-COPY geoipupdate.cron /etc/cron.d/geoipupdate
+COPY docker/geoipupdate.cron /etc/cron.d/geoipupdate
 
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf 
+COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf 
 
 EXPOSE 8888 9191
 
