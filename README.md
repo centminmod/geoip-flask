@@ -17,5 +17,11 @@ Using UWSGI:
 /usr/local/bin/uwsgi --master --http 0.0.0.0:8888 --chdir /opt/geoip-flask/ --module app:app --processes 4
 ```
 
+## Docker
+
+```
+docker run -d --net=host -p 8888:8888 --name geoip centminmod/geoip-flask
+```
+
 ## Credits
 * We use GeoLite2 data created by [Maxmind](http://www.maxmind.com)
