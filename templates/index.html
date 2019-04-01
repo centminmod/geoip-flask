@@ -3,10 +3,10 @@
 
 {% if results['traits'] %}
 {% if not results['registered_country'] or not results['country'] %}
-<i><font style='font-size:75%; background-color:#000; color:#fff;'>Ouch! This IP has very limited (or none) information in database</font></i>
+<i><font style='font-size:95%; background-color:#000; color:#fff;'>Ouch! This IP has very limited (or none) information in database</font></i>
 {% endif %}
 <ul>
-	<li>IP: <b>{{ results['traits']['ip_address'] }}</b> {% if results['own_ip'] == True %}<i>(this is your own IP)</i>{% endif %}</li>
+	<li>IP: <b>{{ results['traits']['ip_address'] }}</b> {% if results['own_ip'] == True %}<i>(your IP)</i>{% endif %}</li>
 	{% if results['registered_country'] %}
 	<li>Country: {{ results['registered_country']['names']['en'] }} (<a href="https://www.geonames.org/countries/{{ results['registered_country']['iso_code'] }}/" target="_blank">{{ results['registered_country']['iso_code'] }}</a>)</li>
 	{% endif %}
