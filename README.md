@@ -2,9 +2,9 @@
 
 ## Demo/Usage
 * See information of your IP: <https://geoip.centminmod.com/>
-* See information of IP 63.245.208.212: <https://geoip.centminmod.com/63.245.208.212>
+* See information of IP 8.8.8.8: <https://geoip.centminmod.com/8.8.8.8>
 * Get JSON with information of your IP: <https://geoip.centminmod.com/api/v1.0/ip/>
-* Get JSON with information of IP 63.245.208.212: <https://geoip.centminmod.com/api/v1.0/ip/63.245.208.212>
+* Get JSON with information of IP 8.8.8.8: <https://geoip.centminmod.com/api/v1.0/ip/8.8.8.8>
 
 ## Running
 Using Flask only (development):
