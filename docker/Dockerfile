@@ -16,7 +16,7 @@ RUN echo "deb http://ppa.launchpad.net/maxmind/ppa/ubuntu bionic main" >> /etc/a
 
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F44B38CE3DB1BF64B61DBD28DE1997DCDE742AFA 
 
-RUN apt-get update && apt-get install -y git python3-pip curl unzip cron geoipupdate supervisor && apt clean && apt autoclean && apt remove
+RUN apt-get update && apt-get install -y git python3-pip curl unzip cron geoipupdate supervisor && apt-get clean && apt-get autoclean && apt-get remove
 
 RUN cd /opt/ \
     && curl -L https://github.com/centminmod/geoip-flask/archive/centminmod.zip -o centminmod.zip \
