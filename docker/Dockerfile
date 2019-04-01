@@ -25,8 +25,7 @@ RUN cd /opt/ \
     && rm -f centminmod.zip \
     && cd /opt/geoip-flask && pip3 install -r requirements.txt \
     && mkdir -p /opt/geoip-flask/GeoLite2-City/ \ 
-    && /usr/bin/geoipupdate -d /opt/geoip-flask/GeoLite2-City/ \
-    && (crontab -l ; echo "15 0 * * * /usr/bin/geoipupdate -d /opt/geoip-flask/GeoLite2-City/ >/dev/null 2>&1") | crontab
+    && /usr/bin/geoipupdate -d /opt/geoip-flask/GeoLite2-City/
 
 COPY docker/geoipupdate.cron /etc/cron.d/geoipupdate
 
