@@ -1,8 +1,14 @@
 # docker run -d --network="web" -p 8888:8888  --name="geoip" -t geoip
-
 FROM ubuntu:18.04
 
-ENV UPDATED "2019-02-27"
+ARG BUILD_DATE
+ARG VCS_REF
+ARG VERSION
+LABEL org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.vcs-url="https://github.com/centminmod/geoip-flask/tree/centminmod" \
+      org.label-schema.version=$VERSION \
+      org.label-schema.schema-version="1.0"
 
 RUN apt-get update && apt-get install -y gnupg
 
@@ -19,11 +25,12 @@ RUN cd /opt/ \
     && rm -f centminmod.zip \
     && cd /opt/geoip-flask && pip3 install -r requirements.txt \
     && mkdir -p /opt/geoip-flask/GeoLite2-City/ \ 
-    && /usr/bin/geoipupdate -d /opt/geoip-flask/GeoLite2-City/
+    && /usr/bin/geoipupdate -d /opt/geoip-flask/GeoLite2-City/ \
+    && (crontab -l ; echo "15 0 * * * /usr/bin/geoipupdate -d /opt/geoip-flask/GeoLite2-City/ >/dev/null 2>&1") | crontab
 
-COPY geoipupdate.cron /etc/cron.d/geoipupdate
+COPY docker/geoipupdate.cron /etc/cron.d/geoipupdate
 
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf 
+COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf 
 
 EXPOSE 8888 9191
 
