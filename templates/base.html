@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <link rel="stylesheet" href="bootstrap.min.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <meta name="author" content="https://github.com/centminmod/geoip-flask">
-      <title>geoip.centminmod.com</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="https://github.com/centminmod/geoip-flask">
+<title>geoip.centminmod.com</title>
 </head>
-    <body style="margin:10px;">
-        {% block content %}{% endblock %}
-	<hr>
-	<font style='font-size:75%;'>
-	<h2>Usage</h2>
-	<ul>
-		<li>See information of your IP: <a href="https://geoip.centminmod.com/">https://geoip.centminmod.com/</a></li>
-		<li>See information of IP 63.245.208.212: <a href="https://geoip.centminmod.com/63.245.208.212">https://geoip.centminmod.com/63.245.208.212</a></li>
-		<li>Get JSON with information of your IP: <a href="https://geoip.centminmod.com/api/v1.0/ip/">https://geoip.centminmod.com/api/v1.0/ip/</a></li>
-		<li>Get JSON with information of IP 63.245.208.212: <a href="https://geoip.centminmod.com/api/v1.0/ip/63.245.208.212">https://geoip.centminmod.com/api/v1.0/ip/63.245.208.212</a></li>
-	</ul>
-	<h2>Credits</h2>
-	<ul>
-		<li><a href="https://github.com/centminmod/geoip-flask">geoip-flask forked Github project</a></li>
-		<li>We use GeoLite2 data created by <a href="http://www.maxmind.com" target="_blank">MaxMind</a> (updated {{ results['geoip_DB_MTime'] }}).</li>
-	</ul>
-	</font>
+<body style="margin:10px;">
+  {% block content %}{% endblock %}
+  <hr>
+  <font style='font-size:75%;'>
+  <h2>Usage</h2>
+  <ul>
+    <li>See information of your IP: <a href="https://geoip.centminmod.com/">https://geoip.centminmod.com/</a></li>
+    <li>See information of IP 63.245.208.212: <a href="https://geoip.centminmod.com/63.245.208.212">https://geoip.centminmod.com/63.245.208.212</a></li>
+    <li>Get JSON with information of your IP: <a href="https://geoip.centminmod.com/api/v1.0/ip/">https://geoip.centminmod.com/api/v1.0/ip/</a></li>
+    <li>Get JSON with information of IP 63.245.208.212: <a href="https://geoip.centminmod.com/api/v1.0/ip/63.245.208.212">https://geoip.centminmod.com/api/v1.0/ip/63.245.208.212</a></li>
+  </ul>
+  <h2>Credits</h2>
+  <ul>
+    <li><a href="https://upcloud.com/signup/?promo=DPY36J">Hosted on Upcloud.com KVM VPS</a> - receive $25 free credits when signing up via <a href="https://upcloud.com/signup/?promo=DPY36J">referral link</a> and after making your first payment</li>
+    <li><a href="https://centminmod.com">Powered By Centmin Mod LEMP Stack</a></li>
+    <li><a href="https://github.com/centminmod/geoip-flask">geoip-flask forked Github project</a></li>
+    <li>We use GeoLite2 data created by <a href="http://www.maxmind.com" target="_blank">MaxMind</a> (updated {{ results['geoip_DB_MTime'] }}).</li>
+  </ul>
+  </font>
     </body>
 </html>
