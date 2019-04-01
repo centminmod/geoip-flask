@@ -10,13 +10,9 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.version=$VERSION \
       org.label-schema.schema-version="1.0"
 
-RUN apt-get update && apt-get install -y gnupg
-
-RUN echo "deb http://ppa.launchpad.net/maxmind/ppa/ubuntu bionic main" >> /etc/apt/source.list
-
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F44B38CE3DB1BF64B61DBD28DE1997DCDE742AFA 
-
-RUN apt-get update && apt-get install -y git python3-pip curl unzip cron geoipupdate supervisor && apt-get clean && apt-get autoclean && apt-get remove
+RUN apt-get update && apt-get install -y gnupg && echo "deb http://ppa.launchpad.net/maxmind/ppa/ubuntu bionic main" >> /etc/apt/source.list \
+    && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F44B38CE3DB1BF64B61DBD28DE1997DCDE742AFA \
+    && apt-get update && apt-get install -y git python3-pip curl unzip cron geoipupdate supervisor && apt-get clean && apt-get autoclean && apt-get remove
 
 RUN cd /opt/ \
     && curl -L https://github.com/centminmod/geoip-flask/archive/centminmod.zip -o centminmod.zip \
