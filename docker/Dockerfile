@@ -13,10 +13,10 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F44B38CE3DB1BF64B61
 RUN apt-get update && apt-get install -y git python3-pip curl unzip cron geoipupdate supervisor 
 
 RUN cd /opt/ \
-    && curl https://codeload.github.com/centminmod/geoip-flask/zip/master -o master.zip \
-    && unzip master.zip \
-    && mv geoip-flask-master geoip-flask \
-    && rm -f master.zip \
+    && curl -L https://github.com/centminmod/geoip-flask/archive/centminmod.zip -o centminmod.zip \
+    && unzip centminmod.zip \
+    && mv geoip-flask-centminmod geoip-flask \
+    && rm -f centminmod.zip \
     && cd /opt/geoip-flask && pip3 install -r requirements.txt \
     && mkdir -p /opt/geoip-flask/GeoLite2-City/ \ 
     && /usr/bin/geoipupdate -d /opt/geoip-flask/GeoLite2-City/
