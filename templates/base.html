@@ -6,6 +6,11 @@
 <meta name="author" content="https://github.com/centminmod/geoip-flask">
 <link rel="shortcut icon" href="https://geoip.centminmod.com/imgs/favicon.png">
 <title>geoip.centminmod.com</title>
+<style>
+h2 {
+  font-size: 1.2rem;
+}
+</style>
 </head>
 <body style="margin:10px;">
   {% block content %}{% endblock %}
@@ -23,7 +28,7 @@
   <h2>Credits</h2>
   <ul>
     <li><a href="https://upcloud.com/signup/?promo=DPY36J">Hosted on Upcloud.com KVM VPS</a> using <a href="https://centminmod.com">Centmin Mod LEMP Stack</a></li>
-    <li><a href="https://github.com/centminmod/geoip-flask">geoip-flask forked Github project</a></li>
+    <li><a href="https://github.com/centminmod/geoip-flask/tree/centminmod">geoip-flask forked Github project</a></li>
     <li>We use GeoLite2 data created by <a href="http://www.maxmind.com" target="_blank">MaxMind</a> (updated {{ results['geoip_DB_MTime'] }}).</li>
   </ul>
   </font>
